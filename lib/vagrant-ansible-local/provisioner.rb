@@ -37,7 +37,7 @@ module VagrantPlugins
           options << "--extra-vars=\"#{extra_vars.join(" ")}\""
         end
 
-#        options << "--inventory-file=#{self.setup_inventory_file}"
+        options << "--inventory=#{config.inventory_path}" if config.inventory_path
 #        options << "--sudo" if config.sudo
 #        options << "--sudo-user=#{config.sudo_user}" if config.sudo_user
         options << "#{self.get_verbosity_argument}" if config.verbose
